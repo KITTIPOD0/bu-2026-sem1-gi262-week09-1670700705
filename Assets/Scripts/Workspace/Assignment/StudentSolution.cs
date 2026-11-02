@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 namespace Assignment
@@ -95,12 +96,42 @@ namespace Assignment
 
         public string ASN01_ReverseString(string str)
         {
-            throw new NotImplementedException();
+            if (str == null) return null;
+
+            Stack<char> stack = new Stack<char>();
+            string reversedStr = "";
+
+            foreach (char c in str)
+            {
+                stack.Push(c);
+            }
+
+            while (stack.Count > 0)
+            {
+                reversedStr += stack.Pop();
+            }
+
+            return reversedStr;
         }
 
         public bool ASN02_StackPalindrome(string str)
         {
-            throw new NotImplementedException();
+            if (str == null) return false;
+
+            Stack<char> stack = new Stack<char>();
+            string reversedStr = "";
+
+            foreach (char c in str)
+            {
+                stack.Push(c);
+            }
+
+            while (stack.Count > 0)
+            {
+                reversedStr += stack.Pop();
+            }
+
+            return str == reversedStr;
         }
 
         #endregion
